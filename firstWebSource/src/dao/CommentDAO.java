@@ -1,5 +1,5 @@
 package dao;
-
+////
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +15,7 @@ private static CommentDAO instance;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
-			System.out.println("µå¶óÀÌ¹ö ·Îµù¿À·ù");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½Ì¹ï¿½ ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½");
 			e.printStackTrace();
 		}
 	}
@@ -27,7 +27,7 @@ private static CommentDAO instance;
 		ResultSet rs = null;
 		List<CommentVO> commentList = new ArrayList<>();
 
-		System.out.println("Á¦¹ß?"+musicNum);
+		System.out.println("ï¿½ï¿½ï¿½ï¿½?"+musicNum);
 		
 		try {
 			con = DBHelper.makeConnection();
@@ -36,7 +36,7 @@ private static CommentDAO instance;
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, musicNum);
 //			pstmt.setInt(2, startRow);
-//			pstmt.setInt(3, endRow - startRow); // limitÀÇ µÎ¹øÂ°´Â °³¼ö
+//			pstmt.setInt(3, endRow - startRow); // limitï¿½ï¿½ ï¿½Î¹ï¿½Â°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			rs = pstmt.executeQuery();
 
 			while (rs.next()) {
@@ -52,7 +52,7 @@ private static CommentDAO instance;
 				commentList.add(comment);
 			}
 		} catch (SQLException e) {
-			System.out.println("selectCommentList ¿¡·¯");
+			System.out.println("selectCommentList ï¿½ï¿½ï¿½ï¿½");
 			e.printStackTrace();
 		} finally {
 			DBHelper.close(rs);
@@ -99,7 +99,7 @@ private static CommentDAO instance;
 
 			result = pstmt.executeUpdate();
 		} catch (SQLException ex) {
-			System.out.println("insert¿¡·¯!!");
+			System.out.println("insertï¿½ï¿½ï¿½ï¿½!!");
 			ex.printStackTrace();
 		} finally {
 			DBHelper.close(pstmt);
@@ -154,7 +154,7 @@ private static CommentDAO instance;
 		
 		return result;
 	}
-	// ÄÚ¸àÆ® Ã³À½ ¾µ¶§ ±×·ì¹øÈ£¸¦  comment_num °ú ¸ÂÃçÁÜ
+	// ï¿½Ú¸ï¿½Æ® Ã³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½×·ï¿½ï¿½È£ï¿½ï¿½  comment_num ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public int updateInitgrp(int commentNum) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -168,7 +168,7 @@ private static CommentDAO instance;
 			pstmt.setInt(2, commentNum);
 			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
-			System.out.println("updateInitgrp ¿¡·¯");
+			System.out.println("updateInitgrp ï¿½ï¿½ï¿½ï¿½");
 			e.printStackTrace();
 		} finally {
 			DBHelper.close(pstmt);
@@ -196,7 +196,7 @@ private static CommentDAO instance;
 
 			result = pstmt.executeUpdate();
 		} catch (SQLException ex) {
-			System.out.println("ReplyCommentInsert¿¡·¯!!");
+			System.out.println("ReplyCommentInsertï¿½ï¿½ï¿½ï¿½!!");
 			ex.printStackTrace();
 		} finally {
 			DBHelper.close(pstmt);
@@ -232,7 +232,7 @@ private static CommentDAO instance;
 
 			}
 		} catch (SQLException e) {
-			System.out.println("selectcomment ¿¡·¯");
+			System.out.println("selectcomment ï¿½ï¿½ï¿½ï¿½");
 			e.printStackTrace();
 		} finally {
 			DBHelper.close(rs);
@@ -257,7 +257,7 @@ private static CommentDAO instance;
 
 			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
-			System.out.println("update ¿¡·¯");
+			System.out.println("update ï¿½ï¿½ï¿½ï¿½");
 			e.printStackTrace();
 		} finally {
 			DBHelper.close(pstmt);
@@ -280,7 +280,7 @@ private static CommentDAO instance;
 
 			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
-			System.out.println("update ¿¡·¯");
+			System.out.println("update ï¿½ï¿½ï¿½ï¿½");
 			e.printStackTrace();
 		} finally {
 			DBHelper.close(pstmt);
